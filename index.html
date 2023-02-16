@@ -368,6 +368,8 @@
 </footer>
 
     <script>
+
+        // Array 
 var stepArr = [
     {title : "Requirement Analysis", para : ["Conduct user research to identify target audience and their needs", "Define functional and non-functional requirements",
     "Create use cases and user stories to outline user journeys"]},
@@ -382,23 +384,26 @@ var stepArr = [
     "Test the website to ensure that it is functional and bug-free"]},
 ]
 
+// adding event listener 
 var stepBtn = document.querySelectorAll(".step-btn")
 console.log("hey")
 console.log(stepBtn)
 stepBtn.forEach((element)=> {
     element.addEventListener('click',stepsChange )})
 
-
+// Changin step data on click 
 function stepsChange(event){
-    
+    // if user clicks icon 
     if (event.target.text == null){
         console.log("empty")
        console.log(event.target)
        
     }
     else {
+    // based on STEP - 1 the digit 1 -  we fetch the id 
     let id = event.target.text.trim()
     id = id.split(" ")[1]
+    // adding array data to html
     document.getElementById("step-img").src = `./images/${id}.png`
     document.getElementById("step-head").innerText = stepArr[id-1].title
     document.getElementById("step-para").innerText = stepArr[id-1].para
