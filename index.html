@@ -404,7 +404,7 @@ function stepsChange(event){
     let id = event.target.text.trim()
     id = id.split(" ")[1]
     // adding array data to html
-    document.getElementById("step-img").src = `./images/${id}.png`
+    document.getElementById("step-img").src = `/images/${id}.png`
     document.getElementById("step-head").innerText = stepArr[id-1].title
     document.getElementById("step-para").innerText = stepArr[id-1].para
     }
